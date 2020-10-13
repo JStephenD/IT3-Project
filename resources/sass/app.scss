@@ -1,0 +1,92 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+
+    &-track {
+        background: $bg-primary;
+    }
+
+    &-thumb {
+        background: $purple;
+    }
+}
+
+main {
+    margin-left: 5rem;
+    
+    
+}
+
+.sidebar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: $bg-primary;
+    z-index: 1000;
+
+    transition: width 200ms ease;
+
+    .sidebar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .sidebar-nav-item {
+            width: 100%;
+
+            &:last-child {
+                margin-top: auto;
+            }
+        }
+
+        .sidebar-nav-link {
+            display: flex;
+            align-items: center;
+            height: 5rem;
+            color: $text-primary;
+            text-decoration: none;
+            filter: grayscale(100%) opacity(0.7);
+            transition: 600ms;
+
+            &:hover {
+                filter: grayscale(0%) opacity(1);
+                background: $bg-secondary;
+                color: $text-secondary;
+            }
+        }
+
+        .sidebar-link-text {
+            display: none;
+            margin-left: 1rem;
+        }
+
+        img, svg {
+            min-width: 2rem;
+            margin: 0 1.5rem;
+        }
+
+        svg {
+            color: $pink;
+            transition: 600ms;
+        }
+    }
+}
+
+.sidebar:hover {
+    width: 16rem;
+
+    & .sidebar-link-text {
+        display: block;
+    }
+}
